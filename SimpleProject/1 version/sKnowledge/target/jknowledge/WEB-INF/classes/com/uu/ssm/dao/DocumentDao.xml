@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.uu.ssm.dao.DocumentDao">
+    <resultMap type="document" id="base">
+		<id property="id" column="id"></id>
+		<result property="name" column="name"/>  
+		<result property="path" column="path"/> 
+		<result property="enabled" column="enabled"/> 
+		<result property="keywords" column="keywords"/> 
+		<result property="description" column="description"/> 
+		<result property="createdTime" column="created_time"/>
+		<association property="user" column="user_id" select="com.uu.ssm.dao.UserDao.getUserById"></association>       
+    </resultMap>
+    
+    <sql id="Base_Col_List">id,name,path,enabled,keywords,description,created_time,user_id</sql>
+    
+    <insert id="insert" parameterType="Document">
+        <trim prefix="insert knowledge_document(" suffix=")" suffixOverrides="," >
+            <if test="id!=null">id,</if>
+            <if test="name!=null">name,</if>
+            <if test="path!=null">path,</if>
+            <if test="enabled!=null">enabled,</if>
+            <if test="keywords!=null">keywords,</if>
+            <if test="description!=null">description,</if>
+            <if test="createdTime!=null">created_time,</if>
+            <if test="user!=null and user.id!=null">user_id,</if>
+        </trim>
+        <trim prefix="values(" suffix=")" suffixOverrides=",">
+	        <if test="id != null">#{id},</if>
+	       <if test="name != null">#{name},</if>
+	       <if test="path != null">#{path},</if>
+	       <if test="enabled != null">#{enabled},</if>
+	       <if test="keywords!=null">#{keywords},</if>
+	       <if test="createdTime != null">#{createdTime},</if>
+	       <if test="description != null">#{description},</if>
+	       <if test="user != null and user.id != null">#{user.id},</if>
+        </trim>
+    </insert>
+    
+    <select id="getList" resultMap="base">
+        select 
+        <include refid="Base_Col_List"></include>
+        from knowledge_document
+        <where>
+            <if test="keywords!='' ">
+				name like #{keywords} or description like #{keywords} or keywords like #{keywords}             
+            </if>
+        </where>
+        <if test="offset!=null and size!=null">
+            limit #{offset},#{size}
+        </if>
+    </select>
+    
+    <select id="count" resultType="int"> 
+        select count(*) from knowledge_document
+        <where>
+            <if test="keywords!='' ">
+				name like #{keywords} or description like #{keywords} or keywords like #{keywords}              
+            </if>
+        </where>
+    </select>
+    
+    <select id="getMineList" resultMap="base">
+        select 
+        <include refid="Base_Col_List"></include>
+        from knowledge_document
+        <where>
+            <if test="keywords!=null ">
+				(name like #{keywords} or description like #{keywords} or keywords like #{keywords} )           
+            </if>
+            <if test="user_id != '' ">and user_id = #{user_id}</if>
+        </where>
+        <if test="offset!=null and size!=null">
+            limit #{offset},#{size}
+        </if>
+    </select>
+    
+    <select id="mineCount" resultType="int"> 
+        select count(*) from knowledge_document
+        <where>
+            <if test="keywords!=null">
+				(name like #{keywords} or description like #{keywords} or keywords like #{keywords})              
+            </if>
+            <if test="user_id != '' ">and user_id = #{user_id}</if>
+        </where>
+    </select>
+    
+    <select id="getById" resultMap="base" parameterType="long">
+	    select 
+	    <include refid="Base_Col_List"/>
+        from knowledge_document where id = #{id}
+	</select>
+    
+</mapper>

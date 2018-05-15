@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	   http://www.springframework.org/schema/context 
+	   http://www.springframework.org/schema/context/spring-context-4.0.xsd
+	   http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/rabbit
+       http://www.springframework.org/schema/rabbit/spring-rabbit-1.6.xsd">
+       
+
+	<context:component-scan base-package="classpath:application.properties"/>
+
+    <rabbit:connection-factory id="rabbitConectionFactory"
+    							host="${amqp.host}"
+    							port="${amqp.port}"
+    							virtual-host="${amqp.vhost}"
+    							username="${amqp.username}"
+    							password="${amqp.password}"/>
+    							
+    <rabbit:admin connection-factory="rabbitConectionFactory"/>
+    
+    <rabbit:queue id="converterQueue"
+    			  name="converterQueue"
+    			  durable="true"
+    			  auto-delete="false"
+    			  exclusive="false"
+    			  auto-declare="true"/>
+    			  
+    <rabbit:direct-exchange id="converterExchange"
+    						name="converterExchange"
+    						durable="true">
+    						
+    		<rabbit:bindings>
+    				<rabbit:binding queue="converterQueue" key="converterQueueKey"/>
+    		</rabbit:bindings>
+    						
+    </rabbit:direct-exchange>
+
+	<rabbit:template id="amqpTemplate"
+					 connection-factory="rabbitConectionFactory"
+					 encoding="utf-8"
+					 exchange="converterExchange"
+					 routing-key="converterQueueKey"
+					 message-converter="jackson2JsonMessageConverter"/>
+					 
+	<bean id="jackson2JsonMessageConverter" class="org.springframework.amqp.support.converter.Jackson2JsonMessageConverter"/>
+	
+</beans>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	   http://www.springframework.org/schema/context 
+	   http://www.springframework.org/schema/context/spring-context-4.0.xsd
+	   http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://mybatis.org/schema/mybatis-spring
+       http://mybatis.org/schema/mybatis-spring.xsd
+       http://www.springframework.org/schema/tx 
+       http://www.springframework.org/schema/tx/spring-tx-4.0.xsd"> 
+       
+       <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+       		<property name="driverClassName" value="${db.driverClassName}"></property>
+       		<property name="url" value="${db.url}"></property>
+       		<property name="username" value="${db.username}"></property>
+       		<property name="password" value="${db.password}"></property>
+       </bean>
+       
+       <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+       		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
+       		<property name="dataSource" ref="dataSource"></property>
+       </bean>
+       
+       <mybatis:scan base-package="com.uu.ssm.dao" factory-ref="sqlSessionFactory"/>
+       
+       <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+       		<property name="dataSource" ref="dataSource"></property>
+       </bean>
+       
+       <tx:advice id="txAdvice" transaction-manager="transactionManager">
+	     <tx:attributes>
+	          <tx:method name="get*" isolation="READ_COMMITTED" read-only="true"/>
+	          <tx:method name="find*" isolation="READ_COMMITTED" read-only="true"/>
+	          <tx:method name="*" propagation="REQUIRED" rollback-for="Exception"/>
+	     </tx:attributes>
+	   </tx:advice>
+
+	   <aop:config>
+	   		<aop:pointcut expression="execution (* com.uu.ssm.service..*Service(..))" id="txPoint"/>
+	   		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPoint"/>
+	   </aop:config>
+       
+</beans>

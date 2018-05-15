@@ -1,0 +1,43 @@
+.pagination-length {
+	width:100px; 
+	display:inline-block;
+	margin:5px 5px 5px 0px;
+}
+
+.pagination-length select {
+	width:80px;
+	margin:0 0;
+}
+
+.pagination-info{
+	margin:10px 0px;
+}
+
+.pagination-info .pagination-info-summary {
+	float:left;
+}
+
+.pagination-info .pagination-info-action {
+	float:right;
+}
+
+.pagination-info .pagination-info-action a:hover {
+	text-decoration:none;
+}
+
+.pagination-info:after{
+	content:".";
+	diaplay:bolck;
+	clear:both;
+	visibility: hidden;
+}
+
+.pagination-info .page-num,.page-first,.page-prev,.page-next,.page-last{
+	padding:5px 10px;
+	margin:0px 1px;
+	background:#f5f5f5;
+}
+
+.pagination-info .active{
+	background:red;
+}
