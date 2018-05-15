@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="17" hostname="DESKTOP-L4C04RS" name="lu.sofeware.demo.Test" skipped="0" tests="27" time="0.076" timestamp="2018-05-15T10:46:12">
+  <properties>
+    <property name="java.vendor" value="Oracle Corporation" />
+    <property name="lib.dir" value="lib" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="eclipse.pdebuild.templates" value="/E:/ShowLu/tools/dev/eclipse-jee-mars-1-win32-x86_64/eclipse/plugins/org.eclipse.pde.build_3.9.100.v20150521-1524/templates/" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="os.name" value="Windows 10" />
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_111\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_111\jre\classes" />
+    <property name="ant.file.SofeTestDemo01" value="E:\ShowLu\review_workspace\SofeTestDemo01\build.xml" />
+    <property name="sun.desktop" value="windows" />
+    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+    <property name="ant.home" value="E:\ShowLu\tools\dev\eclipse-jee-mars-1-win32-x86_64\eclipse\plugins\org.apache.ant_1.9.4.v201504302020" />
+    <property name="java.runtime.version" value="1.8.0_111-b14" />
+    <property name="user.name" value="Administrator" />
+    <property name="user.language" value="zh" />
+    <property name="ant.file.type.SofeTestDemo01" value="file" />
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_111\jre\bin" />
+    <property name="ant.project.default-target" value="test auot junit and report" />
+    <property name="ant.project.name" value="SofeTestDemo01" />
+    <property name="java.version" value="1.8.0_111" />
+    <property name="user.timezone" value="" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_111\jre\lib\endorsed" />
+    <property name="sun.cpu.isalist" value="amd64" />
+    <property name="sun.jnu.encoding" value="GBK" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="file.separator" value="\" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="java.class.version" value="52.0" />
+    <property name="user.country" value="CN" />
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_111\jre" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="ant.file" value="E:\ShowLu\review_workspace\SofeTestDemo01\build.xml" />
+    <property name="os.version" value="10.0" />
+    <property name="src folder" value="src/lu/sofeware" />
+    <property name="path.separator" value=";" />
+    <property name="java.vm.version" value="25.111-b14" />
+    <property name="user.variant" value="" />
+    <property name="ant.library.dir" value="E:\ShowLu\tools\dev\eclipse-jee-mars-1-win32-x86_64\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib" />
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
+    <property name="user.script" value="" />
+    <property name="eclipse.pdebuild.scripts" value="/E:/ShowLu/tools/dev/eclipse-jee-mars-1-win32-x86_64/eclipse/plugins/org.eclipse.pde.build_3.9.100.v20150521-1524/scripts/" />
+    <property name="text folder" value="test/lu/sofeware/demo" />
+    <property name="user.home" value="C:\Users\Administrator" />
+    <property name="java.specification.vendor" value="Oracle Corporation" />
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_111\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_111/bin/server;C:/Program Files/Java/jre1.8.0_111/bin;C:/Program Files/Java/jre1.8.0_111/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_111\bin;C:\Program Files\Java\jdk1.8.0_111\jre\bin;E:\ShowLu\tools\app\apache-maven-3.3.9\bin;E:\ShowLu\mysql-5.7.17-winx64\bin;E:\ShowLu\tools\app\SVN\bin;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;E:\ShowLu\tools\app\git\Git\cmd;E:\ShowLu\review_workspace\sofetestTeacher\help\ant\apache-ant-1.9.11-bin\apache-ant-1.9.1111\bin;;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;E:\ShowLu\tools\dev\eclipse-jee-mars-1-win32-x86_64\eclipse;;." />
+    <property name="java.vendor.url" value="http://java.oracle.com/" />
+    <property name="java.vm.vendor" value="Oracle Corporation" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner lu.sofeware.demo.Test skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,E:\ShowLu\review_workspace\SofeTestDemo01\report\TEST-lu.sofeware.demo.Test.xml crashfile=E:\ShowLu\review_workspace\SofeTestDemo01\junitvmwatcher6170604253738980951.properties propsfile=E:\ShowLu\review_workspace\SofeTestDemo01\junit924970160910091502.properties" />
+    <property name="java.class.path" value="E:\ShowLu\review_workspace\SofeTestDemo01\lib\junit-3.8.1.jar;E:\ShowLu\review_workspace\SofeTestDemo01\classes;E:\ShowLu\review_workspace\SofeTestDemo01;C:\Program Files\Java\jdk1.8.0_111\lib;C:\Program Files\Java\jdk1.8.0_111\lib\tools.jar;E:\ShowLu\tools\dev\eclipse-jee-mars-1-win32-x86_64\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant-launcher.jar;E:\ShowLu\tools\dev\eclipse-jee-mars-1-win32-x86_64\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant.jar;E:\ShowLu\tools\dev\eclipse-jee-mars-1-win32-x86_64\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant-junit.jar;E:\ShowLu\tools\dev\eclipse-jee-mars-1-win32-x86_64\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant-junit4.jar" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.9.4 compiled on April 29 2014" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="java.vm.specification.version" value="1.8" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="sun.os.patch.level" value="" />
+    <property name="eclipse.pdebuild.home" value="/E:/ShowLu/tools/dev/eclipse-jee-mars-1-win32-x86_64/eclipse/plugins/org.eclipse.pde.build_3.9.100.v20150521-1524/./" />
+    <property name="java.io.tmpdir" value="C:\Users\ADMINI~1\AppData\Local\Temp\" />
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/" />
+    <property name="report folder" value="report" />
+    <property name="os.arch" value="amd64" />
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext" />
+    <property name="user.dir" value="E:\ShowLu\review_workspace\SofeTestDemo01" />
+    <property name="line.separator" value="&#xd;&#xa;" />
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+    <property name="basedir" value="E:\ShowLu\review_workspace\SofeTestDemo01" />
+    <property name="ant.java.version" value="1.8" />
+    <property name="ant.core.lib" value="E:\ShowLu\tools\dev\eclipse-jee-mars-1-win32-x86_64\eclipse\plugins\org.apache.ant_1.9.4.v201504302020\lib\ant.jar" />
+    <property name="file.encoding" value="GBK" />
+    <property name="output folder" value="classes" />
+    <property name="java.specification.version" value="1.8" />
+    <property name="ant.project.invoked-targets" value="test auot junit and report" />
+  </properties>
+  <testcase classname="lu.sofeware.demo.Test" name="test" time="0.002" />
+  <testcase classname="lu.sofeware.demo.Test" name="test1" time="0.0" />
+  <testcase classname="lu.sofeware.demo.Test" name="test6" time="0.004">
+    <failure message="expected:&lt;05-04-2018&gt; but was:&lt;格式错误，请以xx-xx-xxxx格式输入&gt;" type="junit.framework.ComparisonFailure">junit.framework.ComparisonFailure: expected:&lt;05-04-2018&gt; but was:&lt;格式错误，请以xx-xx-xxxx格式输入&gt;
+	at lu.sofeware.demo.Test.test6(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="lu.sofeware.demo.Test" name="test8" time="0.001">
+    <failure message="expected:&lt;05-04-2018&gt; but was:&lt;格式错误，请以xx-xx-xxxx格式输入&gt;" type="junit.framework.ComparisonFailure">junit.framework.ComparisonFailure: expected:&lt;05-04-2018&gt; but was:&lt;格式错误，请以xx-xx-xxxx格式输入&gt;
+	at lu.sofeware.demo.Test.test8(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="lu.sofeware.demo.Test" name="test10" time="0.001">
+    <failure message="expected:&lt;05-04-2018&gt; but was:&lt;格式错误，请以xx-xx-xxxx格式输入&gt;" type="junit.framework.ComparisonFailure">junit.framework.ComparisonFailure: expected:&lt;05-04-2018&gt; but was:&lt;格式错误，请以xx-xx-xxxx格式输入&gt;
+	at lu.sofeware.demo.Test.test10(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="lu.sofeware.demo.Test" name="test11" time="0.001">
+    <failure message="expected:&lt;05-04-2018&gt; but was:&lt;格式错误，请以xx-xx-xxxx格式输入&gt;" type="junit.framework.ComparisonFailure">junit.framework.ComparisonFailure: expected:&lt;05-04-2018&gt; but was:&lt;格式错误，请以xx-xx-xxxx格式输入&gt;
+	at lu.sofeware.demo.Test.test11(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="lu.sofeware.demo.Test" name="test13" time="0.001">
+    <failure message="expected:&lt;05-04-2018&gt; but was:&lt;天数错误&gt;" type="junit.framework.ComparisonFailure">junit.framework.ComparisonFailure: expected:&lt;05-04-2018&gt; but was:&lt;天数错误&gt;
+	at lu.sofeware.demo.Test.test13(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="lu.sofeware.demo.Test" name="test20" time="0.001">
+    <failure message="expected:&lt;05-04-2018&gt; but was:&lt;不可存在字母&gt;" type="junit.framework.ComparisonFailure">junit.framework.ComparisonFailure: expected:&lt;05-04-2018&gt; but was:&lt;不可存在字母&gt;
+	at lu.sofeware.demo.Test.test20(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="lu.sofeware.demo.Test" name="test9" time="0.001">
+    <failure message="expected:&lt;...1...&gt; but was:&lt;...0...&gt;" type="junit.framework.ComparisonFailure">junit.framework.ComparisonFailure: expected:&lt;...1...&gt; but was:&lt;...0...&gt;
+	at lu.sofeware.demo.Test.test9(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="lu.sofeware.demo.Test" name="test12" time="0.001">
+    <failure message="expected:&lt;05...&gt; but was:&lt;13...&gt;" type="junit.framework.ComparisonFailure">junit.framework.ComparisonFailure: expected:&lt;05...&gt; but was:&lt;13...&gt;
+	at lu.sofeware.demo.Test.test12(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="lu.sofeware.demo.Test" name="test3" time="0.0" />
+  <testcase classname="lu.sofeware.demo.Test" name="test17" time="0.001">
+    <failure message="expected:&lt;02-29-2018&gt; but was:&lt;天数错误&gt;" type="junit.framework.ComparisonFailure">junit.framework.ComparisonFailure: expected:&lt;02-29-2018&gt; but was:&lt;天数错误&gt;
+	at lu.sofeware.demo.Test.test17(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="lu.sofeware.demo.Test" name="test25" time="0.001" />
+  <testcase classname="lu.sofeware.demo.Test" name="test2" time="0.001" />
+  <testcase classname="lu.sofeware.demo.Test" name="test4" time="0.0" />
+  <testcase classname="lu.sofeware.demo.Test" name="test14" time="0.0">
+    <failure message="expected:&lt;05-04-2018&gt; but was:&lt;格式错误，请以xx-xx-xxxx格式输入&gt;" type="junit.framework.ComparisonFailure">junit.framework.ComparisonFailure: expected:&lt;05-04-2018&gt; but was:&lt;格式错误，请以xx-xx-xxxx格式输入&gt;
+	at lu.sofeware.demo.Test.test14(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="lu.sofeware.demo.Test" name="test18" time="0.0" />
+  <testcase classname="lu.sofeware.demo.Test" name="test19" time="0.001">
+    <failure message="expected:&lt;04-31-2018&gt; but was:&lt;天数错误&gt;" type="junit.framework.ComparisonFailure">junit.framework.ComparisonFailure: expected:&lt;04-31-2018&gt; but was:&lt;天数错误&gt;
+	at lu.sofeware.demo.Test.test19(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="lu.sofeware.demo.Test" name="test15" time="0.0">
+    <failure message="expected:&lt;05-04-2018&gt; but was:&lt;不可存在汉字&gt;" type="junit.framework.ComparisonFailure">junit.framework.ComparisonFailure: expected:&lt;05-04-2018&gt; but was:&lt;不可存在汉字&gt;
+	at lu.sofeware.demo.Test.test15(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="lu.sofeware.demo.Test" name="test16" time="0.0" />
+  <testcase classname="lu.sofeware.demo.Test" name="test22" time="0.0">
+    <failure message="expected:&lt;4&gt; but was:&lt;3&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;4&gt; but was:&lt;3&gt;
+	at lu.sofeware.demo.Test.test22(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="lu.sofeware.demo.Test" name="test26" time="0.0">
+    <failure message="expected:&lt;1&gt; but was:&lt;-1&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;1&gt; but was:&lt;-1&gt;
+	at lu.sofeware.demo.Test.test26(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="lu.sofeware.demo.Test" name="test5" time="0.001">
+    <failure message="expected:&lt;05-04-2018&gt; but was:&lt;&gt;" type="junit.framework.ComparisonFailure">junit.framework.ComparisonFailure: expected:&lt;05-04-2018&gt; but was:&lt;&gt;
+	at lu.sofeware.demo.Test.test5(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="lu.sofeware.demo.Test" name="test7" time="0.001">
+    <failure message="expected:&lt;05-04-2018&gt; but was:&lt;格式错误，请以xx-xx-xxxx格式输入&gt;" type="junit.framework.ComparisonFailure">junit.framework.ComparisonFailure: expected:&lt;05-04-2018&gt; but was:&lt;格式错误，请以xx-xx-xxxx格式输入&gt;
+	at lu.sofeware.demo.Test.test7(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="lu.sofeware.demo.Test" name="test23" time="0.0" />
+  <testcase classname="lu.sofeware.demo.Test" name="test24" time="0.0" />
+  <testcase classname="lu.sofeware.demo.Test" name="test21" time="0.0">
+    <failure message="expected:&lt;2&gt; but was:&lt;3&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;2&gt; but was:&lt;3&gt;
+	at lu.sofeware.demo.Test.test21(Unknown Source)
+</failure>
+  </testcase>
+  <system-out><![CDATA[不为闰年
+0=05-04-2018
+不为闰年
+1=05-04-2018
+6=格式错误，请以xx-xx-xxxx格式输入
+8=格式错误，请以xx-xx-xxxx格式输入
+10=格式错误，请以xx-xx-xxxx格式输入
+11=格式错误，请以xx-xx-xxxx格式输入
+不为闰年
+13=天数错误
+20=不可存在字母
+不为闰年
+9=05-04-2008
+不为闰年
+12=13-04-2018
+不为闰年
+3=05-04-2018
+不为闰年
+17=天数错误
+不为闰年
+2=05-04-2018
+不为闰年
+4=05-04-2018
+14=格式错误，请以xx-xx-xxxx格式输入
+不为闰年
+18=04-30-2018
+不为闰年
+1=天数错误
+15=不可存在汉字
+不为闰年
+16=02-28-2018
+5=
+7=格式错误，请以xx-xx-xxxx格式输入
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="SofeTestDemo01" default="test auot junit and report" basedir=".">
+    <!-- property中name定义名称，可通过${name}来引用 -->
+     <!-- 测试报告存放目录  -->   
+	<property name="lib.dir" value="lib"/>  
+	    <path id="classpath">  
+	       <fileset dir="${lib.dir}" includes="**/*.jar"/>  
+	    </path>  
+	   
+	    <property name="output folder" value="classes"/>  
+	    <!-- 源文件与源文件的测试不能在同一根目录下，否则会发生测试源文件的错误情况 -->
+	    <property name="src folder" value="src/lu/sofeware"/>  
+	    <property name="text folder" value="test/lu/sofeware/demo"/>
+	    
+	    <property name="report folder" value="report"/> 
+	    <!-- property中name定义名称，可通过depends=name依赖的方式引用 ,若多个引用以','分割-->
+		<target name="clean">  
+	       <delete dir="report"/>  <!-- 表示要删除的目录 -->
+	       <!-- 打印控制台 -->
+	       <echo>清除测试报告文件 成功!</echo>  
+	    </target>  
+	   
+	    <target name="compile init">  
+	       <mkdir dir="${output folder}"/>  
+	       <echo>创建编译文件夹 成功!</echo>  
+	    </target>  
+	   
+	    <target name="report init" depends="clean">  
+	       <mkdir dir="${report folder}"/>  
+	       <echo>创建测试报告文件夹 成功!</echo>  
+	    </target>  
+	   
+	    <target name="compile" depends="compile init">  
+	       <javac srcdir="${src folder}" destdir="${output folder}" classpathref="classpath" includeantruntime="on"/>  
+	       <echo>项目源文件编译 成功!</echo>  
+	    </target>  
+	   
+	    <target name="text compile" depends="report init">  
+	       <javac srcdir="${text folder}" destdir="${output folder}" classpathref="classpath" includeantruntime="on"/>  
+	       <echo>项目测试文件编译 成功!</echo>  
+	    </target>  
+	   
+	    <target name="all compile" depends="compile, text compile">  
+	    </target>  
+	   
+	    <target name="test auot junit and report" depends="all compile">
+	         <!--  
+	            printsummary 是否打印 - on为每一个测试用例通过System.out输出一行统计信息，如果出错或测试失败则通过System.err输出信息
+	        	fork - 在独立的VM中执行单元测试用例
+	            haltonfailure   测试异常不继续执行  
+	            classpath       运行单元测试的路径  
+	            formatter       测试完整信息  
+	            usefile         是否使用文件  
+	            test            测试哪个类  
+	            batchtest       批量测试  
+	            showoutput 		在控制台显示
+	        -->   
+	       <junit printsummary="on" fork="true" showoutput="true">  
+	           <classpath>  
+	               <!-- 执行时依赖jar -->
+	              <fileset dir="${lib.dir}" includes="**/*.jar"/>  
+	              <!-- 生成classes文件 -->
+	              <pathelement path="${output folder}"/>  
+	           </classpath>  
+	           <!-- 
+	           		1、type - 单元测试用例执行结果输出格式。可选项有：plain(txt), xml, brief(txt，格式与plain不一样) 或 failure(?)  txt类型,生成的html没有测试详情
+ 					2、usefile - 默认on,单元测试用例执行结果是否输出至文件 是：on；否：off  若是off则不生成文件，文件信息会在控制台打印
+	            -->
+	           <formatter type="xml" usefile="on"/>  
+	           <!-- todir - 单元测试用例执行结果输出目录 -->
+	           <batchtest todir="${report folder}">  
+		           <!-- 在report文件夹下生成测试的文件信息 -->
+	              <fileset dir="${output folder}">  
+	                  <include name="**/Test*.*"/>  
+	              </fileset>  
+	           </batchtest>  
+	       </junit>  
+	       <!-- todir - 单元测试报告输出目录   -->
+	       <junitreport todir="${report folder}">  
+	           <!-- 在report文件夹下生成TESTS-TestSuites.xml，该文件系统默认 -->
+	           <fileset dir="${report folder}">  
+	              <include name="TEST-*.xml"/>  
+	           </fileset>  
+	           <!-- 生成html -->
+	           <report format="frames" todir="${report folder}"/>  
+	       </junitreport>  
+	    </target>
+</project>
